@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hit List</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body onload="startup()">
+    <div class="flex">
+        <h1>The Hit List</h1>
+        <ul id="thelist">
+    </div>
+
+    </ul>
+</body>
+
+<script>
+    function startup() {
+        const data = [["AN", "50$"], ["JTR","25$"], ["MH", "5$"], ["RD", "5$"]]
+
+        const ul = document.getElementById("thelist");
+
+        for (let i = 0; i < data.length; i++) {
+            const item = data[i];
+            const name = item[0];
+            const price = item[1];
+
+            
+
+            let li = document.createElement("li");
+            li.appendChild(document.createTextNode(name + ":"))
+            li.appendChild(document.createTextNode(price))
+            ul.appendChild(li);
+        }
+    }
+</script>
+
+</html>

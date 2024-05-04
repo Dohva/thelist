@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="main.css">
 </head>
-<body class="login">
+
+<body class="login" onload="startup()">
     <div class="login-container" id="loginContainer">
         <form action="submit_login.php" method="POST">
             <div class="form-group">
@@ -24,6 +26,37 @@
     </div>
     <script>
         function triggerLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const hash = this.hashCode(username + "|" + password)
+
+            console.log(username, password, hash);
+            if (hash === 2118249329) {
+                this.acceptLogin();
+            }
+            else {
+                this.rejectLogin();
+            }
+        }
+
+        function hashCode(str) {
+            let hash = 0;
+            for (let i = 0, len = str.length; i < len; i++) {
+                let chr = str.charCodeAt(i);
+                hash = (hash << 5) - hash + chr;
+                hash |= 0; // Convert to 32bit integer
+            }
+            return hash;
+        }
+
+        function startup() {
+            const plainText = "MassiveDamage|kodeordtilhjemmesiden"
+            const hash = this.hashCode(plainText)
+            console.log(plainText)
+            console.log(hash);
+        }
+
+        function rejectLogin() {
             var container = document.getElementById('loginContainer');
             var inputs = document.querySelectorAll('.input-field');
             container.classList.add('shake');
@@ -39,6 +72,11 @@
                 });
             });
         }
+
+        function acceptLogin(){
+            window.location.href = "hitlist.html";
+        }
     </script>
 </body>
+
 </html>
