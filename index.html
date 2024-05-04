@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="login">
+    <div class="login-container" id="loginContainer">
+        <form action="submit_login.php" method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="input-field">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="input-field">
+            </div>
+            <div class="form-group">
+                <button type="button" onclick="triggerLogin()">Login</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        function triggerLogin() {
+            var container = document.getElementById('loginContainer');
+            var inputs = document.querySelectorAll('.input-field');
+            container.classList.add('shake');
+            inputs.forEach(input => {
+                input.classList.add('input-error');
+            });
+
+            // Remove the class after the animation ends
+            container.addEventListener('animationend', () => {
+                container.classList.remove('shake');
+                inputs.forEach(input => {
+                    input.classList.remove('input-error');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
