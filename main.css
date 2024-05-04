@@ -3,6 +3,7 @@ body {
     color: green;
     height: 100vh;
     font-family: Arial, sans-serif;
+    text-transform: uppercase;
 }
 
 .login {
