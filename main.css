@@ -86,8 +86,12 @@ h1 {
 
 .row {
     display: flex;
-    flex-wrap: wrap;
-    width: 5vw;
+    flex-wrap: nowrap;
+    width: 8vw;
     justify-content: space-between;
     align-content: space-between;
+}
+
+h2 {
+    font-size: xx-large;
 }
