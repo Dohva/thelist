@@ -1,11 +1,14 @@
 body {
     background-color: black;
     color: green;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.login {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
 }
 
 .login-container {
@@ -61,24 +64,30 @@ button {
     background-color: red;
 }
 
+
+h1 {
+    font-size: 75px;
+    font: consolas
+}
+
+.hitlist-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .flex{
     padding: 1em; 
     background: black; 
     display: flex; 
     flex-flow: column; 
-    justify-content: space-around;
-}
-
-h1 {
-    font-size: 75px;
-}
-
-ul {
-    list-style: none;
-}
-
-ul li {
-    font-size: 50px;
-    display: flex;
     justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 5vw;
+    justify-content: space-between;
+    align-content: space-between;
 }
